@@ -1,0 +1,56 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+    <a class="navbar-brand" href="#"> Rumintang Jessica </a>
+    <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link" href="{% url 'main:logout' %}">Logout</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+    <img src="https://i.pinimg.com/564x/cb/be/27/cbbe2757f805966c572253310eee5e9b.jpg" alt="Your Logo" class="navbar-logo">
+</nav>
+
+
+{% block navbar_styles %}
+<style>
+    .custom-navbar {
+        background-color:#f5b041; 
+        color: #ffffff;
+    }
+
+    .custom-heading {
+        font-family: 'Font Name', sans-serif; 
+        font-weight: bold; 
+        color: #333;
+        margin-left: 30px;
+    }
+
+    .navbar-logo {
+        max-width: 80px;
+        height: auto;
+        margin-right: 20px;
+    }
+
+    .navbar-brand {
+        margin-left: 20px;
+    }
+
+    body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(245, 252, 254);
+    }
+
+    h1, h2, h3, h4, h5, h6, p {
+        font-family: 'Roboto', sans-serif;
+    }
+</style>
+
+{% endblock navbar_styles %}
