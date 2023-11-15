@@ -75,21 +75,17 @@
                 <th>Price</th>
                 <th>Description</th>
                 <th>Date Added</th>
-            </tr>`;
+            </tr>`
             products.forEach((item) => {
                 htmlString += `\n<tr>
                 <td>${item.fields.name}</td>
                 <td>${item.fields.price}</td>
                 <td>${item.fields.description}</td>
                 <td>${item.fields.date_added}</td>
-                <td>
-                <button class="btn btn-primary" onclick="editProduct(${item.pk})">Edit</button>
-                <button class="btn btn-danger" onclick="deleteProduct(${item.pk})">Delete</button>
-                </td>
-            </tr>`; 
-            });
+            </tr>` 
+            })
 
-            document.getElementById("product_table").innerHTML = htmlString;
+            document.getElementById("product_table").innerHTML = htmlString
         }
 
         refreshProducts()
@@ -104,26 +100,6 @@
             return false
         }
         document.getElementById("button_add").onclick = addProduct
-
-        function editProduct(productId) {
-            fetch(`{% url 'main:edit_product' 0 %}${productId}/`, {
-                method: "POST",
-                body: new FormData(document.querySelector('#form'))
-            }).then(refreshProducts)
-
-            document.getElementById("form").reset()
-            return false
-        }
-
-        function deleteProduct(productId) {
-            fetch(`{% url 'main:delete_product' 0 %}${productId}/`, {
-                method: "POST",
-                body: new FormData(document.querySelector('#form'))
-            }).then(refreshProducts)
-
-            document.getElementById("form").reset()
-            return false
-        }
     </script>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
